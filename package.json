@@ -1,5 +1,5 @@
 {
-  "name": "gulp",
+  "name": "gulp-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,5 +16,8 @@
     "url": "https://github.com/andrewras93/gulp/issues"
   },
   "homepage": "https://github.com/andrewras93/gulp#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
