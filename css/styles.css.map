@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.css","sources":["styles.scss"],"sourcesContent":["$primary: #222;\r\n\r\nbody{\r\n  background: $primary;\r\n}\r\n\r\nnav{\r\n  display: flex;\r\n}\r\n"],"names":[],"mappings":"AAEA,AAAA,IAAI,CAAA;EACF,UAAU,EAHF,IAAI,GAIb;;AAED,AAAA,GAAG,CAAA;EACD,OAAO,EAAE,IAAI,GACd"}
