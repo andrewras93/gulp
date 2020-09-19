@@ -4,6 +4,8 @@ const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
+const terser = require("gulp-terser");
+const rename = require("gulp-rename");
 
 function styles(){
 
@@ -27,12 +29,30 @@ function styles(){
     );
 }
 
+function js(){
+
+    return(
+        gulp.src(["js/*.js", "!js/*.min.js"])
+            // Kigger efter alle filer i min js mappe, som har endelsen js, men ikke min.js
+            .pipe(terser())
+            // Minifier vores js fil
+            .pipe(rename({
+                suffix: ".min"
+            }))
+            // Bruges til at give vores minified js fil et nyt navn, så den ikke overskriver den nuværende js fil
+            // suffix er det modsatte af prefix, og vil i det her tilfælde tilføje .min til sidst i navnet af js filen
+            .pipe(gulp.dest("js"))
+    );
+}
+
 function watch(){
 
     gulp.watch("css/*.scss", styles);
     // Modtager to parameter, første er hvad den skal holde øje med (hvilke filer), og så hvilken funktion den skal køre når der sker ændringer i de filer
+    gulp.watch(["js/*.js", "!js/*.min.js"], js);
 
 }
 
 exports.styles = styles;
+exports.js = js;
 exports.watch = watch;
