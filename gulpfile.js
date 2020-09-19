@@ -53,6 +53,11 @@ function watch(){
 
 }
 
+const build = gulp.parallel(styles, js);
+// Brug gulp.series hvis det er vigtigt hvilken rækkefølge funktionerne køres i
+// build sørger for at bygge filen op så alt kører som det skal
+
 exports.styles = styles;
 exports.js = js;
 exports.watch = watch;
+exports.build = build;
