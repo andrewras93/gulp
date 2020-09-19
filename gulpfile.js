@@ -1,6 +1,9 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
 
 function styles(){
 
@@ -14,6 +17,9 @@ function styles(){
             // Et sourcemap forbinder vores sass (scss) fil med vores compiled css fil, så vi i browseren præcist kan se hvor vores styling regel er skrevet
             .pipe(sass())
             // Skal bruge sass på de filer den har fundet oppe i src
+            .pipe(postcss([autoprefixer({grid:true}), cssnano()]))
+            // Sætter automatisk prefixes (-ms- -moz- -webkit-) på css regler, hvor det er nødvendigt
+            // cssnano giver os en minified version af vores css fil, så alt nærmest står på en linje og på den måde får filen til at fylde mindre
             .pipe(sourcemaps.write("."))
             // Skriver sourcemap til følgende destination
             .pipe(gulp.dest("css"))

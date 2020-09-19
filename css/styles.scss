@@ -2,8 +2,11 @@ $primary: #222;
 
 body{
   background: $primary;
+  user-select: none;
+  display: grid;
 }
 
 nav{
   display: flex;
 }
+

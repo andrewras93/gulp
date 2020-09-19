@@ -18,7 +18,7 @@
   "homepage": "https://github.com/andrewras93/gulp#readme",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^10.0.0",
+    "autoprefixer": "<10.0.0",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
