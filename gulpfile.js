@@ -33,7 +33,7 @@ function js(){
 
     return(
         gulp.src(["js/*.js", "!js/*.min.js"])
-            // Kigger efter alle filer i min js mappe, som har endelsen js, men ikke min.js
+            // Kigger efter alle filer i vores js mappe, som har endelsen js, men ikke min.js
             .pipe(terser())
             // Minifier vores js fil
             .pipe(rename({
