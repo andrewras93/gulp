@@ -15,8 +15,30 @@ nav{
 
 /*$padding: 16px 24px;*/
 
+@mixin blurText($blur: 5px){
+/* Modtager en variabel som kan hedde hvad som helst og have en hvilken som helst værdi */
+/* Kan modtage mere end en variabel, f.eks. opacity på skyggen også, kunne skrives:
+  ($blur: 5px, $opacity: 0.5) og $opacity skrives i stedet for 0.5 i text-shadow */
+  color: transparent;
+  text-shadow: 0 0 $blur rgba(0,0,0,0.5 /*$opacity*/);
+  /* Sætter værdien til at være lig med variablen man bestemte ovenfor */
+}
+
 .box{
   padding: $padding;
   margin-#{$side}: $margin;
   /* Svarer til at skrive margin-left: 10px; */
+  font-size: 40px;
+  @include blurText(10px);
+  /* Inkludere koden fra vores mixin og erstatter variabel værdien med den nye angivet værdi */
+
+}
+
+.box-2{
+  /*@include blurText();*/
+  /* Med mixin og include kan man genbruge kode effektivt og hurtigt, og samtidig ændre variabel værdierne hvis nødvendigt */
+  @extend .box;
+  /* Med extend tager den alt kode der er i den angivet klasse og genbruger det, men man har ikke mulighed for at ændre på variablens værdier */
+  border-radius: 5px;
+  /* Man kan stadig tilføje ekstra kode, udover sin extend */
 }
