@@ -42,3 +42,26 @@ nav{
   border-radius: 5px;
   /* Man kan stadig tilføje ekstra kode, udover sin extend */
 }
+
+header{
+  background-color: antiquewhite;
+
+  .text{
+    color: cadetblue;
+    border: {
+      color: #f0f;
+      style: solid;
+      width: 2px;
+    }
+
+    ul{
+      li{
+        font-size: 20px;
+
+        &:nth-of-type(3){
+          background-color: aquamarine;
+        }
+      }
+    }
+  }
+}
