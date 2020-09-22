@@ -70,7 +70,27 @@ nav{
 }
 
 header{
-  background-color: antiquewhite;
+  /*background-color: lighten(aquamarine, 15);*/
+  /* lighten gør den valgte farve procentvis lysere med den angivet værdi. I dette tilfælde 15% lysere */
+
+  /* background-color: darken(aquamarine, 20); */
+  /* darken gør den valgte farve procentvis mørkere */
+
+  /*background-color: desaturate(aquamarine, 15);*/
+  /* desaturate hiver en procentvis del af farven ud, fra den angivet farve */
+
+  /*background-color: mix(aquamarine, blue);*/
+  /* mix blander de to angivet farver med hinanden */
+
+  /*background-color: grayscale(aquamarine);*/
+  /* grayscale giver den grå som svarer til den angivet farve */
+
+  /*background-color: invert(aquamarine);*/
+  /* invert giver den modsatte farve af den angivet farve */
+
+  background-color: complement(aquamarine);
+  /* complement giver den komplementærfarve til den angivet farve */
+
   height: calc(100vh - 60px);
 
   .text{
