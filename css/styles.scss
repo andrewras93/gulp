@@ -16,6 +16,14 @@ $paddingDefault: 20px;
   &Half{
     padding: $paddingDefault / 2;
   }
+  /* SASS mathmatical functions:
+    abs($num) - absolute value
+    ceil($num) - round up to closest whole number
+    floor($num) - round down to closest whole number
+    percentage($num) - convert to percentage
+    round($num) - round to closest whole number
+    max($list) - maximum list value
+    min($list) - minimum list value */
 }
 
 body{
